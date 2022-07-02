@@ -1,7 +1,7 @@
-import './App.css';
-
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.less';
 import { Button } from 'antd';
+
+import './App.less';
 
 function App() {
   return (
