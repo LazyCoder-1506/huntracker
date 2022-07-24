@@ -1,15 +1,12 @@
 import 'antd/dist/antd.less';
-import { Button } from 'antd';
 
 import './App.less';
-import ContactCard from './components/contacts/ContactCard';
+import PageLayout from './components/PageLayout';
 
 function App() {
   return (
     <>
-      <ContactCard></ContactCard>
-      <ContactCard></ContactCard>
-      <ContactCard></ContactCard>
+      <PageLayout></PageLayout>
     </>
   );
 }
