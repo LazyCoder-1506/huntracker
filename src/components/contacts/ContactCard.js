@@ -1,17 +1,17 @@
 import { Badge, Card, Col, Row } from "antd";
 import React from "react";
 
-const ContactCard = () => (
+const ContactCard = (props) => (
   <>
     <Badge.Ribbon text="Hello">
-      <Card size="small" hoverable style={{width:"100%", marginBottom:"8px", border:"1px solid lightgrey"}}>
-        <p style={{"margin-bottom":0}}><b>John Doe</b></p>
+      <Card size="small" hoverable style={{width:"100%", marginBottom:"2px", border:"1px solid lightgrey"}}>
+        <p><b>{props.data.fields.Name}</b></p>
         <Row justify="space-between">
           <Col span={12}>
-            <p><small>Google London</small></p>
+            <p><small>{props.data.fields.Company} {props.data.fields.Location}</small></p>
           </Col>
           <Col span={12} style={{textAlign: "right"}}>
-            <p><small>CS Dual (2014 - 2019)</small></p>
+            <p><small>{props.data.fields.Degree} ({props.data.fields['Admission Year']} - {props.data.fields['Graduating Year']})</small></p>
           </Col>
         </Row>
       </Card>

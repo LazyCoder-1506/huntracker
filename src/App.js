@@ -1,6 +1,6 @@
-import 'antd/dist/antd.less';
+import 'antd/dist/antd.css';
 
-import './App.less';
+import './App.css';
 import PageLayout from './components/PageLayout';
 
 function App() {
