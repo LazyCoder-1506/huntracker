@@ -3,7 +3,7 @@ import React from "react";
 
 const ContactCard = (props) => (
   <>
-    <Badge.Ribbon text="Hello">
+    <Badge.Ribbon text={props.data.fields['Network level']}>
       <Card size="small" hoverable style={{width:"100%", marginBottom:"2px", border:"1px solid lightgrey"}}>
         <p><b>{props.data.fields.Name}</b></p>
         <Row justify="space-between">
