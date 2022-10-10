@@ -1,3 +1,4 @@
+import { Space } from "antd";
 import { useSelector } from "react-redux"
 import { getAllContacts } from "../../features/contacts/contactSlice"
 import ContactCard from "../ContactCard/ContactCard";
@@ -16,7 +17,9 @@ const ContactListing = () => {
   )
 
   return (
-    <div>{renderContacts}</div>
+    <Space direction="vertical" size={8} style={{display: 'flex'}}>
+      {renderContacts}
+    </Space>
   );
 };
 
