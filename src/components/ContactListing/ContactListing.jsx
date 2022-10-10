@@ -1,4 +1,4 @@
-import { Space } from "antd";
+import { Empty, Space, Spin } from "antd";
 import { useSelector } from "react-redux"
 import { getAllContacts } from "../../features/contacts/contactSlice"
 import ContactCard from "../ContactCard/ContactCard";
@@ -6,19 +6,21 @@ import ContactCard from "../ContactCard/ContactCard";
 const ContactListing = () => {
   const contacts = useSelector(getAllContacts);
 
-  let renderContacts = '';
+  let renderContacts = ''
 
   renderContacts = contacts.length > 0 ? (
     contacts.map(contact => (
       <ContactCard key={contact.id} data={contact} />
     ))
   ) : (
-    <div className="contacts_empty">No Contacts</div>
+    <Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />
   )
 
   return (
     <Space direction="vertical" size={8} style={{display: 'flex'}}>
-      {renderContacts}
+      {renderContacts.length > 0 ? renderContacts : (
+        <Spin tip="Loading..."></Spin>
+      )}
     </Space>
   );
 };
