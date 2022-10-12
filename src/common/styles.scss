@@ -1,0 +1,38 @@
+$margin-sizes: (
+  2: 2px,
+  4: 4px,
+  8: 8px,
+  16: 16px
+);
+
+@each $sizename, $size in $margin-sizes {
+  .mt-#{$sizename} {
+    margin-top: $size;
+  }
+}
+@each $sizename, $size in $margin-sizes {
+  .mb-#{$sizename} {
+    margin-bottom: $size;
+  }
+}
+@each $sizename, $size in $margin-sizes {
+  .ml-#{$sizename} {
+    margin-left: $size;
+  }
+}
+@each $sizename, $size in $margin-sizes {
+  .mr-#{$sizename} {
+    margin-right: $size;
+  }
+}
+
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+
+.d-flex {
+  display: flex;
+}

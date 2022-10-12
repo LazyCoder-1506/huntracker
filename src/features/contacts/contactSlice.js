@@ -14,13 +14,18 @@ export const fetchAsyncContacts = createAsyncThunk('contacts/fetchAsyncContacts'
 })
 
 const initialState = {
-  contacts: {}
+  contacts: [],
+  selectedContact: ''
 }
 
 const contactSlice = createSlice({
   name: 'contacts',
   initialState,
-  reducers: {},
+  reducers: {
+    selectContact: (state, {payload}) => {
+      state.selectedContact = payload;
+    }
+  },
   extraReducers: {
     [fetchAsyncContacts.pending]: () => {
       console.log('pending');
@@ -35,6 +40,14 @@ const contactSlice = createSlice({
   }
 });
 
+export const {selectContact} = contactSlice.actions;
+
 export const getAllContacts = (state) => state.contacts.contacts;
+export const getSelectedContactDetails = (state) => {
+  if (state.contacts.contacts) {
+    const contactDetail = state.contacts.contacts.find(o => o.id === state.contacts.selectedContact);
+    return contactDetail;
+  } else return null;
+}
 
 export default contactSlice.reducer;
